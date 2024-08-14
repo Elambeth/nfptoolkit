@@ -1,0 +1,346 @@
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2c3e50;
+    --accent-color: #e74c3c;
+    --text-color: #333333;
+    --light-text: #ffffff;
+    --background-color: #f4f4f4;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--background-color);
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header Styles */
+header {
+    background: var(--secondary-color);
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+/* Navbar styles */
+.nav-link {
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: var(--primary-color);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+}
+
+/* Add smooth transition for mobile menu */
+#mobile-menu {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+
+#mobile-menu.show {
+    max-height: 300px; /* Adjust this value as needed */
+}
+
+/* Add a subtle animation for the logo */
+@keyframes logoHover {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-3px); }
+    100% { transform: translateY(0); }
+}
+
+header img:hover {
+    animation: logoHover 0.5s ease;
+}
+
+/* Add a subtle shadow to the "Get Started" button */
+.bg-primary {
+    box-shadow: 0 4px 6px rgba(52, 152, 219, 0.2);
+}
+
+.bg-primary:hover {
+    box-shadow: 0 6px 8px rgba(52, 152, 219, 0.3);
+}
+
+/* ... (previous CSS rules remain unchanged) ... */
+
+#hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: var(--light-text);
+    padding: 80px 20px;
+}
+
+.hero-content {
+    text-align: center;
+    max-width: 800px;
+}
+
+.hero-content h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background-color: var(--accent-color);
+    color: var(--light-text);
+    text-decoration: none;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 1.1rem;
+}
+
+.btn:hover {
+    background-color: #c0392b;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 3rem;
+    }
+
+    .hero-content p {
+        font-size: 1.2rem;
+    }
+}
+
+/* ... (rest of the CSS remains unchanged) ... */
+
+
+
+/* Tools Section */
+#tools {
+    padding: 5rem 0;
+    background-color: var(--background-color);
+}
+
+#tools h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: var(--secondary-color);
+}
+
+.tool-carousel {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.tool-card {
+    background-color: var(--light-text);
+    border-radius: 8px;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    flex-basis: calc(20% - 2rem);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.tool-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.tool-card i {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.tool-card h3 {
+    font-size: 1.2rem;
+    color: var(--secondary-color);
+}
+
+#tool-details {
+    margin-top: 3rem;
+    padding: 2rem;
+    background-color: var(--light-text);
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* About Section */
+#about {
+    padding: 5rem 0;
+    background-color: var(--secondary-color);
+    color: var(--light-text);
+    text-align: center;
+}
+
+#about h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+
+.mission-vision {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3rem;
+}
+
+.mission, .vision {
+    flex-basis: 45%;
+    padding: 2rem;
+    background-color: rgba(255,255,255,0.1);
+    border-radius: 8px;
+}
+
+/* Contact Section */
+#contact {
+    padding: 5rem 0;
+    background-color: var(--background-color);
+}
+
+#contact h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: var(--secondary-color);
+}
+
+#contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+#contact-form input,
+#contact-form textarea {
+    margin-bottom: 1rem;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+#contact-form textarea {
+    height: 150px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background-color: var(--accent-color);
+    color: var(--light-text);
+    text-decoration: none;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #c0392b;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* Footer */
+footer {
+    background-color: var(--secondary-color);
+    color: var(--light-text);
+    text-align: center;
+    padding: 2rem 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 3rem;
+    }
+
+    .tool-card {
+        flex-basis: calc(50% - 2rem);
+    }
+
+    .mission-vision {
+        flex-direction: column;
+    }
+
+    .mission, .vision {
+        margin-bottom: 2rem;
+    }
+}
+html {
+    scroll-behavior: smooth;
+}
+
+.transition-all {
+    transition: all 0.3s ease;
+}
+
+/* Add this if you want a fixed header */
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 10;
+}
+
+/* If you add a fixed header, add padding to the body to prevent content from hiding under the header */
+body {
+    padding-top: 64px; /* Adjust this value based on your header height */
+}
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.animate-fade-in {
+    opacity: 1;
+    transform: translateY(0);
+}
